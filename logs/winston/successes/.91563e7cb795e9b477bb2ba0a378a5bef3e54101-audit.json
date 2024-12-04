@@ -1,0 +1,40 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Atheletic\\logs\\winston\\successes\\.91563e7cb795e9b477bb2ba0a378a5bef3e54101-audit.json",
+    "files": [
+        {
+            "date": 1733294915300,
+            "name": "D:\\Atheletic\\logs\\winston\\successes\\phu-2024-04-12-12-success.log",
+            "hash": "c896cf6cb12c9dfaaaead703f5c980ee191cd141da4a81373ebd877a130c17a9"
+        },
+        {
+            "date": 1733295784557,
+            "name": "D:\\Atheletic\\logs\\winston\\successes\\phu-2024-04-12-13-success.log",
+            "hash": "9dfa56e996575811e5e7b4c9718eaf7198dd48c0c35d289856fbb73ec1f7d6a5"
+        },
+        {
+            "date": 1733299254825,
+            "name": "D:\\Atheletic\\logs\\winston\\successes\\phu-2024-04-12-14-success.log",
+            "hash": "b329866d83d3f8e51100f4c48507d2bf07b7f6c9e63fc157366031ea8089432d"
+        },
+        {
+            "date": 1733303808502,
+            "name": "D:\\Atheletic\\logs\\winston\\successes\\phu-2024-04-12-15-success.log",
+            "hash": "5a0e149e93dfa08fb51aa4401a637f007fb6bf6156ed986a070a4a1289b714e6"
+        },
+        {
+            "date": 1733308845662,
+            "name": "D:\\Atheletic\\logs\\winston\\successes\\phu-2024-04-12-16-success.log",
+            "hash": "87919b1ece4c8f53352e8ef0bcb5b23b8a8d0d11399b5ff043af232fe5048687"
+        },
+        {
+            "date": 1733310744841,
+            "name": "D:\\Atheletic\\logs\\winston\\successes\\phu-2024-04-12-17-success.log",
+            "hash": "1d291a7aea5ea8a8c21425024bc3185caa5244c11845fc51fef0353fe7bd6de0"
+        }
+    ],
+    "hashType": "sha256"
+}

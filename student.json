@@ -1,0 +1,36 @@
+{
+  "password": "123456",
+  "student": {
+    "name": {
+      "firstName": "Aminul",
+      "lastName": "haque",
+      "middleName": "-"
+    },
+    "dateOfBirthday": "14-07-199",
+    "gender": "male",
+    "bloodGroup": "o+",
+    "email": "aminulhaque@gmail.com",
+    "contactNo": "01745208681",
+    "emergencyContactNo": "01745208681",
+    "presentAddress": "ctg",
+    "permanentAddress": "ctg",
+    "academicFaculty": "6473b67a12dhh55sdf",
+    "academicDepartment": "physic",
+    "academicSemester": "3rd",
+    "guardian": {
+      "fatherName": "md:abbu",
+      "fatherOccupation": "farmer",
+      "fatherContactNo": "01739202845",
+      "motherName": "mrs.Amuu",
+      "motherOccupation": "houswife",
+      "motherContactNO": "01654649879",
+      "address": "ctg"
+    },
+    "localGuardian": {
+      "name": "kaow nei",
+      "occupation": "kichu bal kore na",
+      "contactNo": "548413213",
+      "address": "vobogure"
+    }
+  }
+}

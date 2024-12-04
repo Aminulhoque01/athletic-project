@@ -1,0 +1,40 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Atheletic\\logs\\winston\\errors\\.1baea42c5499c04b75f823344f3fd2ce3916c3b1-audit.json",
+    "files": [
+        {
+            "date": 1733294915302,
+            "name": "D:\\Atheletic\\logs\\winston\\errors\\phu--2024-04-12-12-error.log",
+            "hash": "68a2bff50c996fd29e5eb3d00388b1dce3240392d248766c0bf9095e1d6822ac"
+        },
+        {
+            "date": 1733295784559,
+            "name": "D:\\Atheletic\\logs\\winston\\errors\\phu--2024-04-12-13-error.log",
+            "hash": "555255b95b10a92ff860cf9467d4341b3cf39da72cb83b3c1a9e0ead360e6f91"
+        },
+        {
+            "date": 1733299254827,
+            "name": "D:\\Atheletic\\logs\\winston\\errors\\phu--2024-04-12-14-error.log",
+            "hash": "54696c60d9cf11e99bd2f97bd201033782593060dedd79c285f6ba7314bf75a9"
+        },
+        {
+            "date": 1733303808504,
+            "name": "D:\\Atheletic\\logs\\winston\\errors\\phu--2024-04-12-15-error.log",
+            "hash": "a74960c7837b9d76211ae92bc0089cb0b5028ac5ec1acbef87cd82dab1663565"
+        },
+        {
+            "date": 1733308845664,
+            "name": "D:\\Atheletic\\logs\\winston\\errors\\phu--2024-04-12-16-error.log",
+            "hash": "f4b2e018d508dc64fd56bf0fd9993cd923395f90e937f32c040d72341681ea24"
+        },
+        {
+            "date": 1733310744843,
+            "name": "D:\\Atheletic\\logs\\winston\\errors\\phu--2024-04-12-17-error.log",
+            "hash": "43f420e53453411389e993efd4cafd422df5241c4a36c5c8c4d128152c0301fe"
+        }
+    ],
+    "hashType": "sha256"
+}
