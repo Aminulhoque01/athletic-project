@@ -1,0 +1,18 @@
+Fri Dec 06 2024  16 : 20 : 16 [right meow!] error: globalErrorHandler ~ Event validation failed: eventLocation: Path `eventLocation` is required., eventDate: Path `eventDate` is required., eventName: Path `eventName` is required., eventID: Path `eventID` is required.
+Fri Dec 06 2024  16 : 29 : 38 [right meow!] error: globalErrorHandler ~ Event validation failed: eventLocation: Path `eventLocation` is required., eventDate: Path `eventDate` is required., eventName: Path `eventName` is required., eventID: Path `eventID` is required.
+Fri Dec 06 2024  16 : 32 : 44 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Fri Dec 06 2024  16 : 39 : 7 [right meow!] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "object",
+    "received": "undefined",
+    "path": [
+      "body",
+      "admin"
+    ],
+    "message": "Required"
+  }
+]
+Fri Dec 06 2024  16 : 54 : 45 [right meow!] error: globalErrorHandler ~ User validation failed: id: Path `id` is required.
+Fri Dec 06 2024  16 : 54 : 47 [right meow!] error: globalErrorHandler ~ User validation failed: id: Path `id` is required.
+Fri Dec 06 2024  16 : 55 : 45 [right meow!] error: globalErrorHandler ~ E11000 duplicate key error collection: athletic.users index: id_1 dup key: { id: "0001" }

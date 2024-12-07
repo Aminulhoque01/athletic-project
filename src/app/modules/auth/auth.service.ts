@@ -1,4 +1,4 @@
-import httpStatus from 'http-status';
+import httpStatus from 'http-status-codes';
 import ApiError from '../../../errors/ApiError';
 import { User } from '../user/user.model';
 import {
@@ -10,7 +10,24 @@ import {
 import { JwtPayload, Secret } from 'jsonwebtoken';
 import config from '../../../config';
 import { jwtHelpers } from '../../../helpers/jwthelpers';
-// import bcrypt from 'bcrypt'
+import { IUser } from '../user/user.initerface';
+import bcrypt from 'bcrypt'
+
+
+
+const createUser = async (user: IUser): Promise<IUser | null> => {
+ 
+  user.password = await bcrypt.hash(user.password, Number(config.bcrypt_salt_rounds));
+
+  const createUser = await User.create(user)
+
+  if (!createUser) {
+    throw new Error('Failed to create user !')
+  }
+  return createUser
+}
+
+
 
 const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   const { id, password } = payload;
@@ -142,6 +159,7 @@ const changePassword = async (
 };
 
 export const AuthService = {
+  createUser,
   loginUser,
   refreshToken,
   changePassword,

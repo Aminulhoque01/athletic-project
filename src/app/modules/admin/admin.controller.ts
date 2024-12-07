@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import httpStatus from 'http-status';
+import httpStatus from 'http-status-codes';
 
 import catchAsync from '../../../shared/catchAsync';
 import pick from '../../../shared/pick';
@@ -49,6 +49,7 @@ const updateAdmin = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+
 const deleteAdmin = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
 

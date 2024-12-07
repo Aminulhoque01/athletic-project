@@ -11,12 +11,12 @@ export default {
   
   default_faculty_pass: process.env.DEFAULT_EVENT_PASS,
   
-  // bcrypt_salt_rounds: process.env.BCRYPT_SALT_ROUNDS,
-  // jwt: {
-  //   secret: process.env.JWT_SECRET,
-  //   refresh_secret: process.env.JWT_REFRESH_SECRET,
-  //   expires_in: process.env.JWT_EXPIRES_IN,
-  //   refresh_expires_in: process.env.JWT_REFRESH_EXOPIRES_IN,
-  // },
+  bcrypt_salt_rounds: process.env.BCRYPT_SALT_ROUNDS,
+  jwt: {
+    secret: process.env.JWT_SECRET,
+    refresh_secret: process.env.JWT_REFRESH_SECRET,
+    expires_in: process.env.JWT_EXPIRES_IN,
+    refresh_expires_in: process.env.JWT_REFRESH_EXOPIRES_IN,
+  },
 
 };

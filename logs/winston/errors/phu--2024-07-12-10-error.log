@@ -1,0 +1,109 @@
+Sat Dec 07 2024  10 : 5 : 44 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Sat Dec 07 2024  10 : 6 : 29 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Sat Dec 07 2024  10 : 6 : 30 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Sat Dec 07 2024  10 : 6 : 31 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Sat Dec 07 2024  10 : 6 : 32 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Sat Dec 07 2024  10 : 8 : 24 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Sat Dec 07 2024  10 : 8 : 25 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Sat Dec 07 2024  10 : 8 : 26 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Sat Dec 07 2024  10 : 13 : 11 [right meow!] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name",
+      "middleName"
+    ],
+    "message": "Required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "dateOfBirth"
+    ],
+    "message": "Required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "gender"
+    ],
+    "message": "Gender is required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "bloodGroup"
+    ],
+    "message": "bloodGroup is required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "profileImage"
+    ],
+    "message": "profileImage is required"
+  }
+]
+Sat Dec 07 2024  10 : 16 : 54 [right meow!] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "object",
+    "received": "undefined",
+    "path": [
+      "body",
+      "admin"
+    ],
+    "message": "Required"
+  }
+]
+Sat Dec 07 2024  10 : 17 : 37 [right meow!] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "gender"
+    ],
+    "message": "Gender is required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "bloodGroup"
+    ],
+    "message": "Blood group is required"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "managementDepartment"
+    ],
+    "message": "Management department is required"
+  }
+]
+Sat Dec 07 2024  10 : 19 : 24 [right meow!] error: globalErrorHandler ~ Expected ',' or '}' after property value in JSON at position 389 (line 14 column 22)
+Sat Dec 07 2024  10 : 19 : 39 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.
+Sat Dec 07 2024  10 : 32 : 9 [right meow!] error: globalErrorHandler ~
+Sat Dec 07 2024  10 : 33 : 20 [right meow!] error: globalErrorHandler ~ Admin validation failed: designation: Path `designation` is required., permanentAddress: Path `permanentAddress` is required., presentAddress: Path `presentAddress` is required., emergencyContactNo: Path `emergencyContactNo` is required., contactNo: Path `contactNo` is required., email: Path `email` is required., name: Path `name` is required., id: Path `id` is required.

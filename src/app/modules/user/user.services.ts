@@ -1,117 +1,57 @@
-// import { AcademicSemester } from '../academicSemester/academicSemesteModel';
-// import { IStudent } from '../student/student.interface';
-
-
 // import {
 //   generateAdminId,
 //   generateFacultyId,
 //   generateStudentId,
 // } from './user.utils';
-import httpStatus from 'http-status';
-// import { Student } from '../student/student.model';
+import httpStatus from 'http-status-codes';
 
-
-// import { Faculty } from '../faculty/faculty.model';
-// import { IFaculty } from '../faculty/faculty.interface';
-// import { IAcademicSemester } from '../academicSemester/academicSemester.interface';
-
-import mongoose from "mongoose";
-import ApiError from "../../../errors/ApiError";
-import { User } from "./user.model";
-import { generateAdminId, generateEventId,  } from "./user.utils";
-import config from "../../../config";
-import { IAdmin } from "../admin/admin.interface";
-import { IUser } from "./user.initerface";
-import { Admin } from "../admin/admin.model";
+import mongoose from 'mongoose';
+import ApiError from '../../../errors/ApiError';
+import { User } from './user.model';
+import { generateAdminId, generateEventId } from './user.utils';
+import config from '../../../config';
+import { IAdmin } from '../admin/admin.interface';
+import { IUser } from './user.initerface';
+import { Admin } from '../admin/admin.model';
 import { IEvent } from '../event/event.interface';
 import { Event } from '../event/event.models';
+import { IEventManager } from '../event_manager/event_manager.interface';
+import { EventManager } from '../event_manager/event_manager.model';
 
 
-// const createStudent = async (
-//   student: IEvent,
-//   user: IUser
-// ): Promise<IUser | null> => {
-//   //auto generated incremental id
-//   //  const id = await generateFacultyId();
-//   // user.id = id;
+// create_manager
 
-//   //default password
+const eventManager = async (
+  eventManager: IEventManager,
+  user: IUser
+): Promise<IUser | null> => {
+  // set role
 
-//   // if (!user.password) {
-//   //   user.password = config.default_student_pass as string;
-//   // }
+  user.role = 'event_manager';
+  // eslint-disable-next-line no-useless-catch
+  try {
+    //array
+    const newEventManage = await EventManager.create([eventManager]);
 
-//   // set role
-//   user.role = 'student';
-//   const academicSemester = await AcademicSemester.findById(
-//     student.academicSemester
-//   ).lean();
-//   // findOne({id:student.academicSemester})
-//   // generate student Id
-//   let newUserAllData = null;
+    if (!newEventManage.length) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create student');
+    }
+  } catch (error) {
+    throw error;
+  }
 
-//   const session = await mongoose.startSession();
-//   try {
-//     session.startTransaction();
-//     const id = await generateStudentId(academicSemester as IAcademicSemester);
-//     user.id = id;
-//     student.id = id;
+  const createdUser = await User.create(user);
 
-//     //array
-//     const newStudent = await Student.create([student], { session });
-
-//     if (!newStudent.length) {
-//       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create student');
-//     }
-
-//     //set student --> _id into user.student
-//     user.student = newStudent[0]._id;
-//     const newUser = await User.create([user], { session });
-
-//     if (!newUser.length) {
-//       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed user created');
-//     }
-
-//     newUserAllData = newUser[0];
-
-//     await session.commitTransaction();
-//     await session.endSession();
-//   } catch (error) {
-//     await session.abortTransaction();
-//     await session.endSession();
-//     throw error;
-//   }
-
-//   if (newUserAllData) {
-//     newUserAllData = await User.findOne({ id: newUserAllData.id }).populate({
-//       path: 'student',
-//       populate: [
-//         {
-//           path: 'academicSemester',
-//         },
-//         {
-//           path: 'academicDepartment',
-//         },
-//         {
-//           path: 'academicFaculty',
-//         },
-//       ],
-//     });
-//   }
-
-//   return newUserAllData;
-//   // const createdUser = await User.create(user);
-
-//   // if (!createStudent) {
-//   //   throw new ApiError(400, 'Failed to create user');
-//   // }
-//   // return createdUser;
-// };
+  if (!eventManager) {
+    throw new ApiError(400, 'Failed to create user');
+  }
+  return createdUser;
+};
 
 //create Event
 
 const createEvent = async (
-  faculty: IEvent,
+  event: IEvent,
   user: IUser
 ): Promise<IUser | null> => {
   // default password
@@ -120,7 +60,7 @@ const createEvent = async (
   }
 
   // set role
-  user.role = 'faculty';
+  user.role = 'event';
 
   // generate faculty id
   let newUserAllData = null;
@@ -130,15 +70,15 @@ const createEvent = async (
 
     const id = await generateEventId();
     user.id = id;
-    // faculty.id = id;
+     
 
-    const newFaculty = await Event.create([faculty], { session });
+    const newEvent = await Event.create([event], { session });
 
-    if (!newFaculty.length) {
+    if (!newEvent.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create faculty ');
     }
 
-    user.faculty = newFaculty[0]._id;
+    user.event = newEvent[0]._id;
 
     const newUser = await User.create([user], { session });
 
@@ -193,7 +133,7 @@ const createAdmin = async (
 
     const id = await generateAdminId();
     user.id = id;
-    admin.id = id;
+    // admin.id = id;
 
     const newAdmin = await Admin.create([admin], { session });
 
@@ -201,7 +141,7 @@ const createAdmin = async (
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create faculty ');
     }
 
-    user.admin = newAdmin[0]._id;
+    // user.admin = newAdmin[0]._id;
 
     const newUser = await User.create([user], { session });
 
@@ -219,21 +159,14 @@ const createAdmin = async (
   }
 
   if (newUserAllData) {
-    newUserAllData = await User.findOne({ id: newUserAllData.id }).populate({
-      path: 'admin',
-      populate: [
-        {
-          path: 'managementDepartment',
-        },
-      ],
-    });
+    newUserAllData = await User.findOne({ id: newUserAllData.id });
   }
 
   return newUserAllData;
 };
 
 export const UserServices = {
-  // createStudent,
-   createEvent,
+  eventManager,
+  createEvent,
   createAdmin,
 };

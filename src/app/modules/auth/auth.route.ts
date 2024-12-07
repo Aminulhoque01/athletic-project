@@ -4,8 +4,17 @@ import { AuthValidation } from './auth.validation';
 import { AuthController } from './auth.controller';
 import { ENUM_USER_ROLE } from '../../../enums/user';
 import auth from '../../middlewares/auth';
+import { UserValidation } from '../user/user.validation';
 
 const router = express.Router();
+
+router.post(
+  '/sing-up',
+  validateRequest(UserValidation.createUserZodSchema),
+  // auth(ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.ADMIN),
+  AuthController.createUser
+)
+
 
 router.post(
   '/login',

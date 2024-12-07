@@ -2,17 +2,18 @@ import { z } from 'zod';
 
 const eventValidated = z.object({
   body: z.object({
-    name: z.object({
-      firstName: z.string().optional(),
-      lastName: z.string().optional(),
-      middleName: z.string().optional(),
+    eventID: z.number({
+      required_error: 'Event id is required',
     }),
-
-    eventDate: z.string(),
-
-    eventLocation: z.string(),
-
-    participants: z.string().optional(),
+    eventName: z.string({
+      required_error: 'event name is required',
+    }),
+    eventDate: z.date({
+      required_error: 'eventDate is required',
+    }),
+    eventLocation: z.string({
+      required_error: 'event Location is required',
+    }),
 
     
   }),

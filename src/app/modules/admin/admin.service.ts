@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import httpStatus from 'http-status';
+import httpStatus from 'http-status-codes';
 import mongoose, { SortOrder } from 'mongoose';
 import ApiError from '../../../errors/ApiError';
 
@@ -11,13 +11,9 @@ import { IpaginationsOptions } from '../../../interfaceses/paginations';
 import { IGeneticResponse } from '../../../interfaceses/common';
 import { paginationHelper } from '../../../helpers/paginationHelper';
 
-const getAllAdmins = async (
-  filters: IAdminFilters,
-  paginationOptions: IpaginationsOptions
-): Promise<IGeneticResponse<IAdmin[]>> => {
+const getAllAdmins = async ( filters: IAdminFilters, paginationOptions: IpaginationsOptions): Promise<IGeneticResponse<IAdmin[]>> => {
   const { searchTerm, ...filtersData } = filters;
-  const { page, limit, skip, sortBy, sortOrder } =
-    paginationHelper.calculatePagination(paginationOptions);
+  const { page, limit, skip, sortBy, sortOrder } = paginationHelper.calculatePagination(paginationOptions);
 
   const andConditions = [];
 

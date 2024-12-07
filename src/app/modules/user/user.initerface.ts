@@ -1,7 +1,8 @@
 import { Model, Types } from 'mongoose';
-// import { IStudent } from '../student/student.interface';
-// import { IFaculty } from '../faculty/faculty.interface';
+
 import { IAdmin } from '../admin/admin.interface';
+import { IEvent } from '../event/event.interface';
+import { IEventManager } from '../event_manager/event_manager.interface';
 
 export type IUser = {
   id: string;
@@ -9,17 +10,17 @@ export type IUser = {
   password: string;
   needsPasswordChange: true | false;
   passwordChangedAt?: Date;
-  student?: Types.ObjectId | "IStudent";
-  faculty?: Types.ObjectId | "IFaculty";
+  eventManager?: Types.ObjectId | IEventManager;
+  event?: Types.ObjectId | IEvent;
   admin?: Types.ObjectId | IAdmin;
 };
 
-// export type IUserMethods = {
+export type IUserMethods = {
 
-//  isUserExist(id:string):Promise<Partial<IUser>|null>;
-//  isPasswordMatched(givenPassword:string, savePassword:string):Promise<boolean>
+ isUserExist(id:string):Promise<Partial<IUser>|null>;
+ isPasswordMatched(givenPassword:string, savePassword:string):Promise<boolean>
 
-// }
+}
 
 export type UserModel = {
   isUserExist(

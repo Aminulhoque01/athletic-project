@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
+
 import { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
 import config from '../../config';
 import { IGenericErrorMessage } from '../../interfaceses/error';

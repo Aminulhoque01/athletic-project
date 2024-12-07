@@ -2,7 +2,7 @@
 // import { UserServices } from './user.services';
 
 // import sendResponse from '../../../shared/sendResponse';
-import httpStatus from 'http-status';
+import httpStatus from 'http-status-codes';
 // import { IUser } from './user.initerface';
 
 import { Request, RequestHandler, Response } from "express";
@@ -25,8 +25,19 @@ import { UserServices } from "./user.services";
 //   }
 // );
 
-const createEvent: RequestHandler = catchAsync(
-  async (req: Request, res: Response) => {
+const createEvent_Manager : RequestHandler = catchAsync(async(req:Request, res:Response)=>{
+  const {event_manager, ...userData} = req.body;
+  const result = await UserServices.eventManager(event_manager, userData);
+
+  sendResponse<IUser>(res,{
+    statusCode:httpStatus.OK,
+    success:true,
+    message:'event_manager created successfully',
+    data: result
+  })
+})
+
+const createEvent: RequestHandler = catchAsync(async (req: Request, res: Response) => {
     const { event, ...userData } = req.body;
     const result = await UserServices.createEvent(event, userData);
 
@@ -42,7 +53,7 @@ const createEvent: RequestHandler = catchAsync(
 const createAdmin: RequestHandler = catchAsync(async (req: Request, res: Response) => {
     const { admin, ...userData } = req.body;
     const result = await UserServices.createAdmin(admin, userData);
-
+    
     sendResponse<IUser>(res, {
       statusCode: httpStatus.OK,
       success: true,
@@ -53,7 +64,7 @@ const createAdmin: RequestHandler = catchAsync(async (req: Request, res: Respons
 );
 
 export const UserController = {
-  // createStudent,
+  createEvent_Manager,
   createEvent,
   createAdmin,
 };

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { Schema, model } from 'mongoose';
 import { IUser, UserModel } from './user.initerface';
-import config from '../../../config';
+// import config from '../../../config';
 import bcrypt from 'bcrypt';
 // import { string } from 'zod';
 
@@ -28,14 +28,14 @@ const userSchema = new Schema<IUser, Record<string, never>, UserModel>(
     passwordChangedAt: {
       type: Date,
     },
-    student: {
-      type: Schema.Types.ObjectId,
-      ref: 'Student',
-    },
-    faculty: {
-      type: Schema.Types.ObjectId,
-      ref: 'Faculty',
-    },
+    // student: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'Student',
+    // },
+    // faculty: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'Faculty',
+    // },
     admin: {
       type: Schema.Types.ObjectId,
       ref: 'Admin',
@@ -65,20 +65,20 @@ userSchema.statics.isPasswordMatched = async function (
   return await bcrypt.compare(givenPassword, savePassword);
 };
 
-userSchema.pre('save', async function (next) {
-  //hash password set
-  const user = this;
+// userSchema.pre('save', async function (next) {
+//   //hash password set
+//   const user = this;
 
-  user.password = await bcrypt.hash(
-    user.password,
-    Number(config.bcrypt_salt_rounds)
-  );
+//   user.password = await bcrypt.hash(
+//     user.password,
+//     Number(config.bcrypt_salt_rounds)
+//   );
 
-  if (!user.needsPasswordChange) {
-    user.passwordChangedAt = new Date();
-  }
+//   if (!user.needsPasswordChange) {
+//     user.passwordChangedAt = new Date();
+//   }
 
-  next();
-});
+//   next();
+// });
 
 export const User = model<IUser, UserModel>('User', userSchema);
